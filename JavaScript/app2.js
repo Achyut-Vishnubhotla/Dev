@@ -53,7 +53,7 @@ getSlice("Hello World",0,5);
 
 let a="Achyut"
 let c=a.slice(0,5); //slice(first index,last index)
-console.log(c);
+console.log(c);     //last index is not included in the output
 
 //str.substr - (deprecated)
 const s=a.substr(2,5); //substr(first index, length of str)
@@ -70,7 +70,73 @@ function cutIt(str,startIndex,endIndex){
     return newStr;
 }
 
-const value="Achyut";
-let ans2=value.slice(2,5);
-console.log(ans2);
-console.log(cutIt(value,2,5));
+let value="Achyut";
+let ans2=value.slice(2,6);     
+console.log(ans2);              //hyut
+console.log(cutIt(value,2,5));  //hyut  
+
+//so u can write these urself 
+//but it is always good to have all of this done in one line
+
+
+//str.substring
+function getSubstring(str,start,end){
+    console.log("Original String:",str);
+    console.log("After substring:",str.substring(start,end));
+}
+getSubstring("HelloWorld",0,5); //here also last index is not included in the output
+//str.substr is deprecated but str.substring exists
+//they r same in terms of functionality though
+
+
+
+//str.replace
+function replaceString(str, target, replacement){
+    console.log("Original String:",str);
+    console.log("After replace:",str.replace(target, replacement));
+}
+replaceString("Hello World","World","JavaScript");
+
+
+
+//str.split
+function splitString(str, separator){
+    console.log("Original String:",str);
+    console.log("After split:",str.split(separator));
+}
+splitString("Hello World"," ");
+//this splits the string based on a delimeter(what u want to split ur string on)
+const value4 = "hi,my,name,ios,Achyut"
+const words = value4.split(",");
+console.log(words);
+
+
+
+//str.trim
+function trimString(str){
+    console.log("Original String:",str);
+    console.log("After trim:",str.trim())
+}
+trimString("   Hello World   "); //trimmed out the extra spaces in the beginning and the end
+
+
+//str.toUppercase
+function toUpper(str){
+    console.log("Original String:",str);
+    console.log("After toUpperCase:",str.toUpperCase());
+}
+toUpper("Hello World");
+
+
+//str.toLowerCase
+function toLower(str){
+    console.log("Original String:",str);
+    console.log("After toLowerCase:",str.toLowerCase());
+}
+toLower("Hello World");
+
+
+
+//here only slice and split are the good once 
+//may be u might use these in th future
+
