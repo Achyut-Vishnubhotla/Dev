@@ -53,7 +53,22 @@ concatExample([1,2,3],[4,5,6]);
 
 
 
-//forEach()
+//forEach() -> to iterate over an array
+/* u can iterate in this way
+const intialArray = [1,2,3];
+for(let i=0;i<intialArray;.length,i++){
+    console.log(intialArray[i]);
+}
+*/
+//forEach() will take another function as argument -> callback
+//easy way
+const intialArray = [1,2,3];
+function logThing(str){
+    console.log(str);
+}
+intialArray.forEach(logThing);
+
+/* complex way
 function forEachExample(arr){
     console.log("original Array:",arr);
     arr.forEach(function(item,index){
@@ -61,5 +76,50 @@ function forEachExample(arr){
     });
 }
 forEachExample([1,2,3]);
+*/
 
+
+//map()
+function mapExample(arr){
+    console.log("Original Array:",arr);
+
+    let newArr = arr.map(function(item) {
+        return item * 2;
+    });
+    console.log("After map:", newArr);
+}
+mapExample([1,2,3]);
+
+//filter()
+function filterExample(arr) {
+    console.log("Original Array:",arr);
+
+    let newArr = arr.filter(function(item) {
+        return item > 3;
+    });
+    console.log("After filter:",newArr);
+}
+filterExample([1,2,3,4,5]);
+
+//find()
+function findExample(arr){
+    console.log("original Array:",arr);
+
+    let found = arr.find(function(item) {
+        return item > 3;
+    });
+    console.log("After find:", found);
+}
+findExample([1,2,3,4,5]);
+
+//sort()
+function sortExample(arr){
+    console.log("Original Array:", arr);
+
+    arr.sort(function(a,b) {
+        return a-b;
+    });
+    console.log("After sort:", arr);
+}
+sortExample([5,2,3,4,1]);
 
