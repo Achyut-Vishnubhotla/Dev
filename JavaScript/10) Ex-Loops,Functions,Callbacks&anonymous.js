@@ -118,8 +118,8 @@ function sumOfThings(a,b,fn){
     return val1+val2;
 }
 
-sumOfThings(a,b,function(a){
-    return a*a;
+sumOfThings(1,3,function (a){
+    return a*a; 
 })
 
 
