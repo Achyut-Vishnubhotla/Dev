@@ -100,5 +100,43 @@ function sumOfSomething(a,b,callback){
 }
 
 const ans5 = sumOfSomething(2,2,square);
-console.log(ans);
+console.log(ans5);
 
+
+
+
+
+
+//anonymous function
+//function with no name
+//cant be defined in the global scope
+//u have to pass it native in other function
+
+function sumOfThings(a,b,fn){
+    const val1=fn(a);
+    const val2 = fn(b);
+    return val1+val2;
+}
+
+sumOfThings(a,b,function(a){
+    return a*a;
+})
+
+
+//instead of defining outside
+/*
+function square1(a){
+    return n*n;
+}
+
+const ans5 = sumOfSomething(2,2,square);
+console.log(ans5);
+*/
+//u r just doing this
+/*
+sumOfThings(a,b,function square(a){
+    return a*a
+})
+
+and that is the case with the anonymous function also
+*/
